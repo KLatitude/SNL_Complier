@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1617333381 source:c:\users\jlu\desktop\snl\main.cpp
+	<iostream>
+	<fstream>
+	"token.h"
+	"scanner.h"
+
+1617325844 c:\users\jlu\desktop\snl\token.h
+	<string>
+	"lex_type.h"
+
+1617332625 c:\users\jlu\desktop\snl\lex_type.h
+
+1617331165 c:\users\jlu\desktop\snl\scanner.h
+	<string>
+	"lex_type.h"
+	"token.h"
+
+1617332657 source:c:\users\jlu\desktop\snl\scanner.cpp
+	"scanner.h"
+	<iostream>
+	<algorithm>
+
+1617374648 source:f:\编译原理\课设\snl\main.cpp
+	<iostream>
+	<fstream>
+	"token.h"
+	"scanner.h"
+
+1617325846 f:\编译原理\课设\snl\token.h
+	<string>
+	"lex_type.h"
+
+1617332626 f:\编译原理\课设\snl\lex_type.h
+
+1617331166 f:\编译原理\课设\snl\scanner.h
+	<string>
+	"lex_type.h"
+	"token.h"
+
+1617332658 source:f:\编译原理\课设\snl\scanner.cpp
+	"scanner.h"
+	<iostream>
+	<algorithm>
+
+1617440068 source:e:\c-project\snl\main.cpp
+	<iostream>
+	"lex_analysis.h"
+
+1617441576 e:\c-project\snl\token.h
+	<string>
+	"lex_type.h"
+
+1617428153 e:\c-project\snl\lex_type.h
+	<string>
+
+1617331166 e:\c-project\snl\scanner.h
+	<string>
+	"lex_type.h"
+	"token.h"
+
+1617442125 source:e:\c-project\snl\scanner.cpp
+	"scanner.h"
+	<iostream>
+	<algorithm>
+
+1617428234 source:e:\c-project\snl\lex_type.cpp
+	"lex_type.h"
+
+1617442392 source:e:\c-project\snl\lex_analysis.cpp
+	"lex_analysis.h"
+	"scanner.h"
+	<iostream>
+
+1617429781 e:\c-project\snl\lex_analysis.h
+	<string>
+	<vector>
+	"token.h"
+
