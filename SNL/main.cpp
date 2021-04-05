@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    //词法分析
+    //璇嶆硶鍒嗘瀽
     LexAnalysis lex_analysis;
     vector<Token> rec;
     try {
@@ -15,7 +15,7 @@ int main() {
     lex_analysis.printTokenList("out.txt");
 
 
-    //语法分析
+    //璇硶鍒嗘瀽
 
     return 0;
 }
