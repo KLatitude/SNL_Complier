@@ -1,5 +1,5 @@
 #include <iostream>
-#include "lex_analysis.h"
+#include "./Lex_Analysis/Head/lex_analysis.h"
 using namespace std;
 
 int main() {

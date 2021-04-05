@@ -32,14 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="lex_analysis.cpp" />
-		<Unit filename="lex_analysis.h" />
-		<Unit filename="lex_type.cpp" />
-		<Unit filename="lex_type.h" />
+		<Unit filename="Lex_Analysis/Cpp/lex_analysis.cpp" />
+		<Unit filename="Lex_Analysis/Cpp/lex_type.cpp" />
+		<Unit filename="Lex_Analysis/Cpp/scanner.cpp" />
+		<Unit filename="Lex_Analysis/Head/lex_analysis.h" />
+		<Unit filename="Lex_Analysis/Head/lex_type.h" />
+		<Unit filename="Lex_Analysis/Head/scanner.h" />
+		<Unit filename="Lex_Analysis/Head/token.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="scanner.cpp" />
-		<Unit filename="scanner.h" />
-		<Unit filename="token.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

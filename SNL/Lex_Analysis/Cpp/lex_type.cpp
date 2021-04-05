@@ -1,4 +1,4 @@
-#include "lex_type.h"
+#include "../Head/lex_type.h"
 
 std::string getLexType(LexType lex) {
     std::string str_lex[] = {

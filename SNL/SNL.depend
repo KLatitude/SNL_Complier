@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1617602142 source:e:\c-project\snl\main.cpp
+	<iostream>
+	"./Lex_Analysis/Head/lex_analysis.h"
+
+1617601746 e:\c-project\snl\lex_analysis\head\lex_analysis.h
+	<string>
+	<vector>
+	"token.h"
+
+1617601906 e:\c-project\snl\lex_analysis\head\token.h
+	<string>
+	"lex_type.h"
+
+1617601632 e:\c-project\snl\lex_analysis\head\lex_type.h
+	<string>
+
+1617602154 source:e:\c-project\snl\lex_analysis\cpp\lex_type.cpp
+	"../Head/lex_type.h"
+
+1617602165 source:e:\c-project\snl\lex_analysis\cpp\scanner.cpp
+	"../Head/scanner.h"
+	<iostream>
+	<algorithm>
+
+1617601906 e:\c-project\snl\lex_analysis\head\scanner.h
+	<string>
+	"lex_type.h"
+	"token.h"
+
+1617602172 source:e:\c-project\snl\lex_analysis\cpp\lex_analysis.cpp
+	"../Head/lex_analysis.h"
+	"../Head/scanner.h"
+	<iostream>
+

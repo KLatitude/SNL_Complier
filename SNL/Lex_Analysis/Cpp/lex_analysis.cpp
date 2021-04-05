@@ -1,5 +1,5 @@
-#include "lex_analysis.h"
-#include "scanner.h"
+#include "../Head/lex_analysis.h"
+#include "../Head/scanner.h"
 #include <iostream>
 
 using namespace std;

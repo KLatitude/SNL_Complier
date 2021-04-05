@@ -1,4 +1,4 @@
-#include "scanner.h"
+#include "../Head/scanner.h"
 #include <iostream>
 #include <algorithm>
 using namespace std;
