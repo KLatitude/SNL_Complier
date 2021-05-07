@@ -19,7 +19,7 @@ private:
 public:
     Scanner();
     Scanner(std::string context);
-    Token scan();
+    Token* scan();
     bool isNumber(char ch);
     bool isLetter(char ch);
     LexType reservedLookup(std::string str);

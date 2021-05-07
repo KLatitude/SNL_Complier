@@ -39,6 +39,10 @@
 		<Unit filename="Lex_Analysis/Head/lex_type.h" />
 		<Unit filename="Lex_Analysis/Head/scanner.h" />
 		<Unit filename="Lex_Analysis/Head/token.h" />
+		<Unit filename="Semantic_Analysis/Cpp/sem_analysis.cpp" />
+		<Unit filename="Semantic_Analysis/Head/sem_analysis.h" />
+		<Unit filename="Syntax_Analysis/Cpp/syn_analysis.cpp" />
+		<Unit filename="Syntax_Analysis/Head/syn_analysis.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

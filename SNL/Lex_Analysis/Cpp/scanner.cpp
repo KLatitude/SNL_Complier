@@ -44,7 +44,7 @@ LexType Scanner::reservedLookup(string str) {
 }
 
 
-Token Scanner::scan() {
+Token* Scanner::scan() {
     State state = START;
     int length = context_.length();
 
@@ -64,24 +64,24 @@ Token Scanner::scan() {
                     state = INNUM;
                 } else {
                     switch (context_[next_++]) {
-                        case '+': return Token(line_, ADD, "+");
-                        case '-': return Token(line_, MINUS, "-");
-                        case '*': return Token(line_, TIMES, "*");
-                        case '/': return Token(line_, DIV, "/");
-                        case '(': return Token(line_, LPAREN, "(");
-                        case ')': return Token(line_, RPAREN, ")");
-                        case ';': return Token(line_, SEMI, ";");
-                        case '[': return Token(line_, LMIDPAREN, "[");
-                        case ']': return Token(line_, RMIDPAREN, "]");
-                        case '=': return Token(line_, EQ, "=");
-                        case '<': return Token(line_, LT, "<");
-                        case ',': return Token(line_, COMMA, ",");
+                        case '+': return new Token(line_, ADD, "+");
+                        case '-': return new Token(line_, MINUS, "-");
+                        case '*': return new Token(line_, TIMES, "*");
+                        case '/': return new Token(line_, DIV, "/");
+                        case '(': return new Token(line_, LPAREN, "(");
+                        case ')': return new Token(line_, RPAREN, ")");
+                        case ';': return new Token(line_, SEMI, ";");
+                        case '[': return new Token(line_, LMIDPAREN, "[");
+                        case ']': return new Token(line_, RMIDPAREN, "]");
+                        case '=': return new Token(line_, EQ, "=");
+                        case '<': return new Token(line_, LT, "<");
+                        case ',': return new Token(line_, COMMA, ",");
                         case ':': state = INASSIGN; break;
                         case '{': state = INCOMMENT; break;
                         case '.': state = INDOT; break;
                         case '\'': state = INCHAR; break;
-                        case EOF: return Token(line_, ENDFILE, "");
-                        default: return Token(line_, ERROR, string(1, context_[--next_]));
+                        case EOF: return new Token(line_, ENDFILE, "");
+                        default: return new Token(line_, ERROR, string(1, context_[--next_]));
                     }
                 }
                 break;
@@ -92,7 +92,7 @@ Token Scanner::scan() {
                     str.push_back(context_[next_]);
                     next_++;
                 }
-                return Token(line_, reservedLookup(str), str);
+                return new Token(line_, reservedLookup(str), str);
                 break;
             }
             case INNUM: {
@@ -101,14 +101,16 @@ Token Scanner::scan() {
                     str.push_back(context_[next_]);
                     next_++;
                 }
-                return Token(line_, INTC, str);
+                return new Token(line_, INTC, str);
                 break;
             }
             case INASSIGN: {
                 if (context_[next_++] == '=') {
-                    return Token(line_, ASSIGN, ":=");
-                } else
-                    return Token(line_, ERROR, string(1, context_[--next_]));
+                    return new Token(line_, ASSIGN, ":=");
+                } else {
+                    next_ -= 2;
+                    return new Token(line_, ERROR, string(1, context_[next_]));
+                }
                 break;
             }
             case INCOMMENT: {
@@ -118,7 +120,7 @@ Token Scanner::scan() {
                     next_++;
                 }
                 if (next_ == length)
-                    return Token(line_, ERROR, "No } ");
+                    return new Token(line_, ERROR, "No } ");
                 else {
                     next_++;
                     state = START;
@@ -128,30 +130,29 @@ Token Scanner::scan() {
             case INDOT: {
                 if (context_[next_] == '.') {
                     next_++;
-                    return Token(line_, UNDERANGE, "..");
+                    return new Token(line_, UNDERANGE, "..");
                 }
-                else if (context_[next_] == EOF)
-                    return Token(line_, DOT, ".");
-                else
-                    return Token(line_, ERROR, ".");
+                return new Token(line_, DOT, ".");
+//                else if (context_[next_] == EOF)
+//                    return new Token(line_, DOT, ".");
+//                else
+//                    return new Token(line_, ERROR, ".");
                 break;
             }
             case INCHAR: {
-                string str = "'";
                 if (isLetter(context_[next_]) || isNumber(context_[next_])) {
-                    str.push_back(context_[next_]);
                     next_++;
                 } else
-                    return Token(line_, ERROR, "'");
+                    return new Token(line_, ERROR, "'");
                 if (next_ < length && context_[next_] == '\'') {
-                    str.push_back('\'');
-                    return Token(line_, CHARC, str);
+                    next_++;
+                    return new Token(line_, CHARC, string(1, context_[next_ - 2]));
                 } else
-                    return Token(line_, ERROR, "'");
+                    return new Token(line_, ERROR, "'");
                 break;
             }
             default: break;
         }
     }
-    return Token(line_, ERROR, "No End!");
+    return new Token(line_, ERROR, "No End!");
 }

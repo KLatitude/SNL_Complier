@@ -1,9 +1,11 @@
 # depslib dependency file v1.0
-1617602142 source:e:\c-project\snl\main.cpp
+1620300864 source:e:\c-project\snl\main.cpp
 	<iostream>
 	"./Lex_Analysis/Head/lex_analysis.h"
+	"./Syntax_Analysis/Head/syn_analysis.h"
+	"./Semantic_Analysis/Head/sem_analysis.h"
 
-1617601746 e:\c-project\snl\lex_analysis\head\lex_analysis.h
+1617603578 e:\c-project\snl\lex_analysis\head\lex_analysis.h
 	<string>
 	<vector>
 	"token.h"
@@ -12,24 +14,51 @@
 	<string>
 	"lex_type.h"
 
-1617601632 e:\c-project\snl\lex_analysis\head\lex_type.h
+1618318156 e:\c-project\snl\lex_analysis\head\lex_type.h
 	<string>
 
-1617602154 source:e:\c-project\snl\lex_analysis\cpp\lex_type.cpp
+1617931503 source:e:\c-project\snl\lex_analysis\cpp\lex_type.cpp
 	"../Head/lex_type.h"
 
-1617602165 source:e:\c-project\snl\lex_analysis\cpp\scanner.cpp
+1620368442 source:e:\c-project\snl\lex_analysis\cpp\scanner.cpp
 	"../Head/scanner.h"
 	<iostream>
 	<algorithm>
 
-1617601906 e:\c-project\snl\lex_analysis\head\scanner.h
+1617603541 e:\c-project\snl\lex_analysis\head\scanner.h
 	<string>
 	"lex_type.h"
 	"token.h"
 
-1617602172 source:e:\c-project\snl\lex_analysis\cpp\lex_analysis.cpp
+1620290829 source:e:\c-project\snl\lex_analysis\cpp\lex_analysis.cpp
 	"../Head/lex_analysis.h"
 	"../Head/scanner.h"
 	<iostream>
+
+1620368497 source:e:\c-project\snl\syntax_analysis\cpp\syn_analysis.cpp
+	"../Head/syn_analysis.h"
+	<string>
+	<iostream>
+
+1620289661 e:\c-project\snl\syntax_analysis\head\syn_analysis.h
+	<vector>
+	<string>
+	<stack>
+	"../../Lex_Analysis/Head/lex_analysis.h"
+
+1620299260 source:e:\c-project\snl\semantic_analysis\cpp\sem_analysis.cpp
+	"../Head/sem_analysis.h"
+	<iostream>
+	<unordered_set>
+
+1620298816 e:\c-project\snl\semantic_analysis\head\sem_analysis.h
+	"../../Syntax_Analysis/Head/syn_analysis.h"
+	<string>
+	<vector>
+
+1619958468 e:\c-project\snl\semantic_analysis\head\type_ir.h
+	"field_chain.h"
+
+1619958514 e:\c-project\snl\semantic_analysis\head\field_chain.h
+	"type_ir.h"
 

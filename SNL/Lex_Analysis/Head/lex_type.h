@@ -4,13 +4,13 @@
 #include <string>
 
 typedef enum {
-    //±£Áô×Ö
+    //reserved word
     PROGRAM, TYPE, VAR, PROCEDURE, BEGIN, END, ARRAY, OF, RECORD,
     IF, THEN, ELSE, FI, WHILE, DO, ENDWH, READ, WRITE, RETURN, INTEGER, CHAR,
 
-    //ÌØÊâ·ûºÅ
+    //operator
     ADD, MINUS, TIMES, DIV, LPAREN, RPAREN, LMIDPAREN, RMIDPAREN,
-    ASSIGN, EQ, LT, SEMI, COLON, COMMA, UNDERANGE, DOT,
+    ASSIGN, EQ, LT, SEMI, COLON, COMMA, UNDERANGE, DOT, // := = < ; : , .. .
 
     ID, INTC, CHARC,
 

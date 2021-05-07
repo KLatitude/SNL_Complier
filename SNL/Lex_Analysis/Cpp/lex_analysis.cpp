@@ -4,7 +4,13 @@
 
 using namespace std;
 
-vector<Token>& LexAnalysis::getTokenList(string source_file) {
+LexAnalysis::~LexAnalysis() {
+    for (int i = 0; i < (int)token_list_.size(); i++) {
+        delete token_list_[i];
+    }
+}
+
+vector<Token*>& LexAnalysis::getTokenList(string source_file) {
     string context = "";
     FILE* file = fopen(const_cast<char*>(source_file.c_str()), "r");
     if (file) {
@@ -21,12 +27,12 @@ vector<Token>& LexAnalysis::getTokenList(string source_file) {
     fclose(file);
     Scanner scanner(context);
     while (true) {
-        Token t = scanner.scan();
+        Token* t = scanner.scan();
         token_list_.push_back(t);
-        cout<<t.line_<<"\t"<<getLexType(t.lex_)<<"\t"<<t.sem_<<endl;
-        if (t.lex_ == ERROR)
+        cout<<t->line_<<"\t"<<getLexType(t->lex_)<<"\t"<<t->sem_<<endl;
+        if (t->lex_ == ERROR)
             throw exception();
-        if (t.lex_ == ENDFILE)
+        if (t->lex_ == ENDFILE)
             break;
     }
     return token_list_;
@@ -42,7 +48,7 @@ void LexAnalysis::printTokenList(string target_file) {
         return;
     }
     for (int i = 0; i < (int)token_list_.size(); i++) {
-        fprintf(file, "%d\t%s\t%s\n", token_list_[i].line_, getLexType(token_list_[i].lex_).c_str(), token_list_[i].sem_.c_str());
+        fprintf(file, "%d\t%s\t%s\n", token_list_[i]->line_, getLexType(token_list_[i]->lex_).c_str(), token_list_[i]->sem_.c_str());
     }
     fclose(file);
 }

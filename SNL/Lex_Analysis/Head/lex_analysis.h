@@ -6,9 +6,10 @@
 #include "token.h"
 class LexAnalysis {
 private:
-    std::vector<Token> token_list_;
+    std::vector<Token*> token_list_;
 public:
-    std::vector<Token>& getTokenList(std::string source_file);
+    ~LexAnalysis();
+    std::vector<Token*>& getTokenList(std::string source_file);
     void printTokenList(std::string target_file);
 };
 
