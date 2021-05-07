@@ -561,7 +561,7 @@ TypeIR* SemAnalysis::recordVar(TreeNode* t) {
             if (!result)
                 analysisError(t, "id is not a field type", t->child_[0]->name_[0]);
             else if (t->child_[0]->child_[0] != NULL)
-                type_ptr = arrayVarForRecord(t->child_[0], curP); //--------------------------------need to modify
+                type_ptr = arrayVarForRecord(t->child_[0], curP); 
         }
     } else
         analysisError(t, "id has not declaration", t->name_[0]);
